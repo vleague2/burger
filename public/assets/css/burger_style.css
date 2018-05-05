@@ -1,0 +1,14 @@
+body {
+    background-color: #fef0e4
+}
+
+#burger-prompt {
+    font-family: 'Amatic SC', cursive;;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.navbar-brand {
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
