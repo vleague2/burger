@@ -1,6 +1,7 @@
 // REQUIRE ORM FILE
 const orm = require('../config/orm');
 
+// CREATE BURGER OBJECT
 let burger = {
     all: function(callback) {
         orm.selectAll("burgers", (res) => {
@@ -8,3 +9,6 @@ let burger = {
         })
     }
 }
+
+// EXPORT BURGER OBJECT
+module.exports = burger;
