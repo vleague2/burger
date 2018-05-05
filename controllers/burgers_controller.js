@@ -4,7 +4,7 @@ const router = express.Router();
 const burger = require('../models/burger');
 
 // CREATE ROUTES
-router.get('/', (res, res) => {
+router.get('/', (req, res) => {
     burger.all(data => {
         let hbsObject = {
             burger: data
@@ -13,3 +13,5 @@ router.get('/', (res, res) => {
         res.render('index', hbsObject);
     })
 })
+
+module.exports = router;
