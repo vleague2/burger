@@ -7,6 +7,12 @@ let burger = {
         orm.selectAll("burgers", (res) => {
             callback(res);
         })
+    },
+
+    update: function(col, val, whereCol, whereVal, callback) {
+        orm.updateOne("burgers", col, val, whereCol, whereVal, (res) => {
+            callback(res);
+        })
     }
 }
 
