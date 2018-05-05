@@ -2,7 +2,7 @@ body {
     background-color: #fef0e4
 }
 
-#burger-prompt {
+.burger-txt {
     font-family: 'Amatic SC', cursive;;
     font-size: 30px;
     font-weight: 700;
@@ -11,4 +11,16 @@ body {
 .navbar-brand {
     font-family: 'Amatic SC', cursive;
     font-size: 30px;
+}
+
+.reg-txt {
+    font-family: 'Roboto', sans-serif;
+}
+
+.card-body {
+    padding-bottom: 0px;
+}
+
+.card {
+    margin-bottom: 10px;
 }

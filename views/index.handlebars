@@ -9,10 +9,40 @@
         <div class='col-sm-8 offset-sm-2 text-center'>
             <form>
                 <div class="form-group">
-                    <label for="burger-input" id="burger-prompt">Add a burger to eat!</label>
+                    <label for="burger-input" class='burger-txt'>Add a burger to eat!</label>
                     <textarea class="form-control" id="burger-input" rows="2"></textarea>
                 </div>
+                <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
+        </div>
+    </div>
+
+    <div class='row mt-4'>
+        <div class='col-sm-5 offset-sm-1'>
+            <p class='burger-txt text-center'>Burgers to eat</p>
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p class="reg-txt">{{this.burger_name}}  <i class="fas fa-arrow-right"></i> 
+                            <button type="button" class="btn btn-warning">Devour</button></p>
+                        </div>
+                    </div>
+                {{/unless}}
+            {{/each}}
+        </div>
+
+        <div class='col-sm-5 offset-sm-1'>
+            <p class='burger-txt text-center'>Burgers devoured</p>
+            {{#each burgers}}
+                {{#if devoured}}
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <p class="reg-txt">{{this.burger_name}} <span class="badge badge-warning"> <i class="fas fa-check"></i></span></p>
+                        </div>
+                    </div>
+                {{/if}}
+            {{/each}}
         </div>
     </div>
 </div>
