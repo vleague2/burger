@@ -23,4 +23,4 @@ This web app is a simple interface for users to enter burgers they would like to
 
 ## Example of Usage
 
-![Gif of app](public/assets/img/readme_gif.gif) 
+![Gif of app](public/assets/img/readme_gif2.gif) 
