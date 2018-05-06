@@ -28,7 +28,16 @@ router.put('/api/burgers/:id', (req, res) => {
             res.status(200).end();
         }
     })
+})
 
+router.post('/api/burgers', (req, res) => {
+    
+    let burgerName = req.body.burgername;
+
+    burger.insert(burgerName, result => {
+        res.status(200).end(); 
+    })
+    
 })
 
 module.exports = router;

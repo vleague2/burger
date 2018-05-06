@@ -13,6 +13,12 @@ let burger = {
         orm.updateOne("burgers", col, val, whereCol, whereVal, (res) => {
             callback(res);
         })
+    },
+
+    insert: function(name, callback) {
+        orm.insertOne("burgers", name, (res) => {
+            callback(res);
+        })
     }
 }
 

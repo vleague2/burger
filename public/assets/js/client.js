@@ -5,7 +5,19 @@ $(function() {
         $.ajax('/api/burgers/' + id, {
             type: 'PUT'
         }).then( function() {
-            console.log("yes");
+            location.reload();
+        })
+    })
+
+    $("#submit").click(function() {
+        event.preventDefault();
+
+        let burgerName = {burgername: $("#burger-input").val().trim()};
+
+        $.ajax('/api/burgers', {
+            type: 'POST',
+            data: burgerName
+        }).then( function() {
             location.reload();
         })
     })

@@ -13,9 +13,16 @@ let orm = {
         )
     },
 
-    insertOne: function() {
-        connection.query(
+    insertOne: function(table, name, callback) {
+        let queryString = "INSERT INTO " + table + " (burger_name, devoured) VALUES ('" + name + "', '0')";
 
+        connection.query(
+            queryString,
+            (err, result) => {
+                if (err) throw err;
+                callback(result);
+            }
+        
         )
     },
 

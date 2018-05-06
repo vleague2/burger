@@ -12,7 +12,7 @@
                     <label for="burger-input" class='burger-txt'>Add a burger to eat!</label>
                     <textarea class="form-control" id="burger-input" rows="2"></textarea>
                 </div>
-                <button type="submit" class="btn btn-secondary">Submit</button>
+                <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -24,9 +24,9 @@
                 {{#unless devoured}}
                     <div class="card">
                         <div class="card-body text-center">
-                            <p class="reg-txt">{{this.burger_name}}  <i class="fas fa-arrow-right"></i> 
+                            <p class="reg-txt">{{this.burger_name}}  <i class="fas fa-arrow-right"></i> <button type="button" class="btn btn-warning devour" id="{{this.id}}">Devour</button>
                             </p>
-                            <button type="button" class="btn btn-warning devour" id="{{this.id}}">Devour</button>
+                            
                         </div>
                     </div>
                 {{/unless}}
