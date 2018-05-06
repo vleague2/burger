@@ -1,31 +1,66 @@
+<!--container to hold all content-->
 <div class='container mt-3'>
+
+    <!--first row-->
     <div class='row'>
+
+        <!--full-width column-->
         <div class='col-sm-12 text-center'>
+
+            <!--load burger image-->
             <img src="/assets/img/burger.gif" width="200px">
         </div>   
     </div>
 
+    <!--second row-->
     <div class='row mt-3'>
+
+        <!--column width 8 with an offset of 2 so it's centered-->
         <div class='col-sm-8 offset-sm-2 text-center'>
+
+            <!--start our form-->
             <form>
+
+                <!--group together the elements-->
                 <div class="form-group">
+
+                    <!--Form prompt text-->
                     <label for="burger-input" class='burger-txt'>Add a burger to eat!</label>
+
+                    <!--text input box-->
                     <textarea class="form-control" id="burger-input" rows="2" aria-describedby="textHelp"></textarea>
+
+                    <!--helper text that will display if user tries to submit empty form-->
                     <small id="textHelp" class="form-text text-danger">Please enter a burger name.</small>
                 </div>
+
+                <!--submit button-->
                 <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
             </form>
         </div>
     </div>
 
+    <!--third row-->
     <div class='row mt-4'>
+
+        <!--left column-->
         <div class='col-sm-5 offset-sm-1'>
+
+            <!--column header-->
             <p class='burger-txt text-center'>Burgers to eat</p>
+
+            <!--pull in handlebars object and loop through it-->
             {{#each burgers}}
+
+                <!--if the boolean 'devoured' is false-->
                 {{#unless devoured}}
+
+                    <!--create a card-->
                     <div class="card">
                         <div class="card-body text-center">
-                            <p class="reg-txt">{{this.burger_name}}  <i class="fas fa-arrow-right"></i> <button type="button" class="btn btn-warning devour" id="{{this.id}}">Devour</button>
+
+                            <!--pull out the burger's name, add an arrow icon, and create a button to devour it-->
+                            <p class="reg-txt">{{this.burger_name}} <i class="fas fa-arrow-right"></i> <button type="button" class="btn btn-warning devour" id="{{this.id}}">Devour</button>
                             </p>
                             
                         </div>
@@ -34,12 +69,23 @@
             {{/each}}
         </div>
 
+        <!--right column-->
         <div class='col-sm-5 offset-sm-1'>
+
+            <!--column header-->
             <p class='burger-txt text-center'>Burgers devoured</p>
+
+            <!--pull in handlebars object and loop through it-->
             {{#each burgers}}
+
+                <!--if the boolean 'devoured' is true-->
                 {{#if devoured}}
+
+                    <!--create a card-->
                     <div class="card">
                         <div class="card-body text-center">
+
+                            <!--pull out burger name, and add a checkmark to show it's been devoured-->
                             <p class="reg-txt">{{this.burger_name}} <span class="badge badge-warning"> <i class="fas fa-check"></i></span></p>
                         </div>
                     </div>
