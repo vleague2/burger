@@ -20,7 +20,7 @@ router.put('/api/burgers/:id', (req, res) => {
 
     console.log(whereVal);
 
-    burger.update("devoured", 1, "id", whereVal, data => {
+    burger.update("devoured", 1, "id", whereVal, result => {
         if (result.changedRows === 0) {
             return res.status(404).end(0);
         }

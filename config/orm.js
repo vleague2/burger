@@ -20,16 +20,10 @@ let orm = {
     },
 
     updateOne: function(table, col, val, whereCol, whereVal, callback) {
+        let queryString = "UPDATE " + table + " SET " + col + "=" + val + " WHERE " + whereCol + "=" + whereVal;
+
         connection.query(
-            "UPDATE " + table + " SET ? WHERE ?",
-            [
-                {
-                    col: val
-                },
-                {
-                    whereCol: whereVal
-                }
-            ],
+            queryString,
             (err, result) => {
                 if (err) throw err;
                 callback(result);
