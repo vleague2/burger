@@ -2,13 +2,9 @@
 const mysql = require('mysql');
 
 // CREATE OBJECT TO HOLD CONNECTION INFO FOR MYSQL
-let connection = mysql.createConnection({
-    port: 3306,
-    host: '127.0.0.1',
-    user: "root",
-    password: "root",
-    database: "burgers_db"
-});
+let connection = mysql.createConnection(
+    process.env.JAWSDB_URL
+);
 
 // CONNECT TO THE DATABASE
 connection.connect(err => {
