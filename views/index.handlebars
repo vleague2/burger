@@ -10,7 +10,8 @@
             <form>
                 <div class="form-group">
                     <label for="burger-input" class='burger-txt'>Add a burger to eat!</label>
-                    <textarea class="form-control" id="burger-input" rows="2"></textarea>
+                    <textarea class="form-control" id="burger-input" rows="2" aria-describedby="textHelp"></textarea>
+                    <small id="textHelp" class="form-text text-danger">Please enter a burger name.</small>
                 </div>
                 <button type="submit" class="btn btn-secondary" id="submit">Submit</button>
             </form>

@@ -14,11 +14,17 @@ $(function() {
 
         let burgerName = {burgername: $("#burger-input").val().trim()};
 
-        $.ajax('/api/burgers', {
-            type: 'POST',
-            data: burgerName
-        }).then( function() {
-            location.reload();
-        })
+        if (!$("#burger-input").val().trim()) {
+            $("#textHelp").css('display', 'block');
+        }
+
+        else {
+            $.ajax('/api/burgers', {
+                type: 'POST',
+                data: burgerName
+            }).then( function() {
+                location.reload();
+            })
+        }
     })
 });
